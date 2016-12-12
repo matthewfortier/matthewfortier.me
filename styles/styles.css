@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css?family=Lato|Montserrat|Roboto");
+.body-content {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 100vh; }
+  .body-content .profile {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10%; }
+  .body-content #profile-image {
+    margin: auto;
+    border: 2px black solid;
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    background-image: url("../images/me2.jpg");
+    background-size: auto 200px;
+    background-position: center; }
+  .body-content h1 {
+    font-family: 'Lato', sans-serif; }
