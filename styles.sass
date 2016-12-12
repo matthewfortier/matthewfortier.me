@@ -1,25 +1,72 @@
 @import url('https://fonts.googleapis.com/css?family=Lato|Montserrat|Roboto')
 
+html, body
+  margin: 0
+  padding: 0
+  font-family: 'Lato', sans-serif
+
+h1
+  background: linear-gradient(to left, #A152EB 0%, #2500ff 100%)
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+
 .body-content
+  position: relative
   display: flex
   align-items: center
   justify-content: center
   height: 100vh
+  width: 100%
+  max-height: 100%
+  background-color: #131519
 
-  .profile
-    text-align: center
-    width: 100%
-    margin-bottom: 10%
+.container
+  margin: 0
+  padding: 0
+  width: 100%
+  display: flex
+  justify-content: center
 
-  #profile-image
-    margin: auto
-    border: 2px black solid
-    border-radius: 50%
-    height: 200px
-    width: 200px
-    background-image: url("../images/me2.jpg")
-    background-size: auto 200px
-    background-position: center
+.profile
+  position: relative
+  text-align: center
+  max-width: 60vh
+  background-color: white
+  padding: 5%
+  z-index: 0
+  box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.25)
 
-  h1
-    font-family: 'Lato', sans-serif
+#profile-image
+  position: relative
+  margin: auto
+  border-radius: 50%
+  height: 200px
+  width: 200px
+  background-image: url("../images/me2.jpg")
+  background-size: auto 200px
+  background-position: center
+
+#profile-image:after
+  content: ''
+  position: absolute
+  background-image: linear-gradient(to top left, #A152EB 0%, #2500ff 100%)
+  border-radius: inherit
+  top: -4px
+  bottom: -4px
+  right: -4px
+  left: -4px
+  z-index: -1
+
+#buttons span
+  margin-left: 2px
+  margin-right: 2px
+
+.button
+  padding: 10px
+  border: 3px #692DF4 solid
+  border-radius: 99px
+
+.button:hover
+  cursor: pointer
+  background-color: #692DF4
+  color: white
