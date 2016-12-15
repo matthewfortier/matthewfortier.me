@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="../styles/compiled/template.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <div class="exit" style="display: none;">
+      <span class="close"></span>
+    </div>
+    <div class="navbar">
+      <div class="profile">
+        <div class="profile-image"></div>
+      </div>
+      <div class="info">
+        <h1>Matthew Fortier</h1>
+        <h4>a Full Stack Developer</h4>
+
+        <div class="social">
+          <a href="mailto:matthew.fortier@mymail.champlain.edu"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/in/matthewfortier" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+          <a href="https://github.com/matthewfortier" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+        </div>
+
+        <div id="about-text" style="display: none;">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fermentum eget lorem et pharetra. Cras vestibulum, est vel venenatis aliquet, sem nibh pulvinar purus, eu ullamcorper elit lacus at urna. Donec ut sapien dui. Mauris hendrerit lobortis justo, vitae congue magna mollis et. Aliquam sed aliquam odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse vel est mollis, congue lacus eget, varius odio. Praesent facilisis tincidunt urna sed fringilla. Pellentesque ut leo quam. In eu gravida arcu. Aenean at vehicula diam. Praesent et massa vitae leo aliquam ullamcorper eget et sem. Aliquam vel lorem sit amet felis tincidunt aliquam. Ut a velit tincidunt, pretium velit sed, condimentum nibh.</p>
+        </div>
+      </div>
+      <div class="links">
+        <a href="#"><li id="portfolio">Portfolio</li></a>
+        <a href="#"><li id="resume">Resume</li></a>
+        <a href="#"><li id="about">About Me</li></a>
+      </div>
+    </div>
+
+    <!-- Page Content -->
+
+    <div class="content-wrapper">
+
+    </div>
+
+    <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      $(".navbar #about").click(function(){
+        $(".exit").show();
+        $("#about-text").show();
+        $(".links").hide();
+        $(".navbar").removeClass("shrink");
+        $(".navbar").addClass("grow");
+      });
+      $(".exit").click(function() {
+        $(".exit").hide();
+        $("#about-text").hide();
+        $(".links").show();
+        $(".navbar").removeClass("grow").addClass("shrink");
+      });
+    </script>
+  </body>
+</html>
