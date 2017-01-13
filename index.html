@@ -7,29 +7,64 @@
     <link rel="stylesheet" href="./styles/compiled/styles.css">
   </head>
   <body>
-    <div class="profile-image"></div>
-    <div class="profile">
-      <div class="nav">
-        <div class="links">
-          <ul>
-              <li>Home</li>
-              <li>Resume</li>
-              <li>Portfolio</li>
-              <li>About Me</li>
-          </ul>
-        </div>
-        <div class="social">
-          <i class="fa fa-envelope" aria-hidden="true"></i>
-          <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-          <i class="fa fa-github" aria-hidden="true"></i>
-          <i class="fa fa-codepen" aria-hidden="true"></i>
-        </div>
+    <nav>
+      <div class="menu flex">
+        <a href="#">
+          <div class="item">
+            Resume
+            <div class="slider"></div>
+          </div>
+        </a>
+        <a href="#">
+          <div class="item">
+            Portfolio
+            <div class="slider"></div>
+          </div>
+        </a>
+        <a href="#">
+          <div class="item">
+            About
+            <div class="slider"></div>
+          </div>
+        </a>
       </div>
+      <div class="logo flex">
+        <span id="button">MATTHEW FORTIER</span>
+      </div>
+      <div class="links flex">
+        <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
+        <p class="tooltip">Email</p>
+        <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+        <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
+        <i class="fa fa-codepen fa-2x" aria-hidden="true"></i>
+      </div>
+    </nav>
 
-      <div class="profile-text">
-        <h1>Matthew Fortier</h1>
-        <h3>Software Engineer, Full Stack Developer, Baseball Enthusiast</h3>
-      </div>
-    </div>
+    <script
+    src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      $("#button").click(function(){
+        $(this).toggleClass("circle");
+      });
+
+      $(".item").mouseover(function(){
+        $(this).find(".slider").css("right", "auto");
+        $(this).find(".slider").css("left", "0");
+        $(this).find(".slider").animate({
+            width: $(this).width()
+        }, 200);
+      });
+
+      $(".item").mouseleave(function(){
+        $(this).find(".slider").css("left", "auto");
+        $(this).find(".slider").css("right", "0");
+        $(this).find(".slider").animate({
+            width: 0
+        }, 200);
+      });
+
+    </script>
   </body>
 </html>
