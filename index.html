@@ -2,28 +2,80 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Matthew Fortier</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matthew Fortier | Home</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./styles/compiled/styles.css">
   </head>
   <body>
-    <div class="body-content">
-      <div class="container">
-        <div class="profile">
-          <!-- <div id="profile-image"></div> -->
-          <h1>Matthew Fortier</h1>
-          <h3>Web Developer, Baseball Fanatic</h3>
-          <p>
-            Thank you for visiting my website! Take a look at the links below
-            to check out some of my best work as well as some more information
-            about me!
-          </p>
-          <div id="buttons">
-            <a href="./pages/portfolio.html"><span class="button">Portfolio</span></a>
-            <span class="button">Resume</span>
-            <span class="button">Learn More!</span>
+    <nav>
+      <div id="navbar-container">
+        <a href="/">
+          <div id="logo">
+            <span>MF</span>
           </div>
+        </a>
+        <div id="navbar">
+          <ul>
+            <a href="#"><li>Resume</li></a>
+            <a href="#"><li>Portfolio</li></a>
+            <a href="#"><li>About Me</li></a>
+            <a href="#"><li>Contact</li></a>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="page-text">
+      MATTHEW FORTIER
+    </div>
+
+    <div class="main-content">
+      <div id="profile-image">
+        <img src="./images/me.jpg" alt="A Portrait of Me">
+      </div>
+      <div id="welcome">
+        <h1>Welcome!</h1>
+        <p>My name is Matthew Fortier and I am an aspiring Full Stack Web Developer.
+          I really enjoy having a part in every aspect of web development from
+          writing the stylesheets, making database calls, and even setting up web servers
+          from the command line. My favorite aspect of web development is making a well-designed
+          website. It is becoming more and more important these days to have a nice looking website,
+          and that is where I would like to come in.
+          <br> <br>
+          I have had the opportunity to explore many different web development languages and frameworks
+          to create the best product possible while making it look and feel great to use. Check out my
+          <a href="#" style="font-weight: 900;">portfolio</a> to see some examples of my work. Below are just a few examples of
+          web technologies I have experience with.
+        </p>
+        <div id="technologies">
+          <img src="./images/html.png" alt="html logo">
+          <img src="./images/css.png" alt="css logo" style="transform: scale(1.25);">
+          <img src="./images/js.png" alt="js logo">
+          <img src="./images/jquery.png" alt="jquery logo">
+          <img src="./images/php.png" alt="php logo">
+          <img src="./images/node.png" alt="node logo">
+          <img src="./images/flask.png" alt="flask">
+          <img src="./images/mysql.png" alt="mysql">
+          <img src="./images/apache.png" alt="apache logo">
         </div>
       </div>
     </div>
+
+    <div id="floating-sidebar">
+      <!-- http://codepen.io/runnabro/pen/imeHn/ -->
+      <a href="#"><li class="tooltip" data-title="Mail"><i class="fa fa-envelope-o" aria-hidden="true"></i></li></a>
+      <a href="#"><li class="tooltip" data-title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></li></a>
+      <a href="#"><li class="tooltip" data-title="LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></li></a>
+      <a href="#"><li class="tooltip" data-title="Codepen"><i class="fa fa-codepen" aria-hidden="true"></i></li></a>
+    </div>
+
+    <script
+    src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"></script>
+    <script type="text/javascript">
+
+    </script>
   </body>
 </html>
