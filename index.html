@@ -23,6 +23,7 @@
             <a href="./pages/contact.html"><li>Contact</li></a>
           </ul>
         </div>
+        <span class="menu-button"></span>
       </div>
     </nav>
 
@@ -31,32 +32,22 @@
     </div>
 
     <div class="main-content">
-      <img src="./images/me.jpg" alt="A Portrait of Me">
-      <div id="welcome">
-        <h1>Welcome!</h1>
-        <p>My name is Matthew Fortier and I am an aspiring Full Stack Web Developer.
-          I really enjoy having a part in every aspect of web development from
-          writing the stylesheets, making database calls, and even setting up web servers
-          from the command line. My favorite aspect of web development is making a well-designed
-          website. It is becoming more and more important these days to have a nice looking website,
-          and that is where I would like to come in.
-          <br> <br>
-          I have had the opportunity to explore many different web development languages and frameworks
-          to create the best product possible while making it look and feel great to use. Check out my
-          <a href="./pages/portfolio.html" style="font-weight: 900;">portfolio</a> to see some examples of my work. Below are just a few examples of
-          web technologies I have experience with.
-        </p>
-        <div id="technologies">
-          <img src="./images/html.png" alt="html logo">
-          <img src="./images/css.png" alt="css logo" style="transform: scale(1.25);">
-          <img src="./images/js.png" alt="js logo">
-          <img src="./images/jquery.png" alt="jquery logo">
-          <img src="./images/sass.svg" alt="sass logo">
-          <img src="./images/php.png" alt="php logo">
-          <img src="./images/node.png" alt="node logo">
-          <img src="./images/flask.png" alt="flask">
-          <img src="./images/mysql.png" alt="mysql">
-          <img src="./images/apache.png" alt="apache logo">
+      <div class="profile">
+        <img src="./images/me.jpg" alt="">
+        <div id="welcome">
+          <h1>Welcome!</h1>
+          <p>My name is Matthew Fortier and I am an aspiring Full Stack Web Developer.
+            I really enjoy having a part in every aspect of web development from
+            writing the stylesheets, making database calls, and even setting up web servers
+            from the command line. My favorite aspect of web development is making a well-designed
+            website. It is becoming more and more important these days to have a nice looking website,
+            and that is where I would like to come in.
+            <br> <br>
+            I have had the opportunity to explore many different web development languages and frameworks
+            to create the best product possible while making it look and feel great to use. Check out my
+            <a href="./pages/portfolio.html" style="font-weight: 900;">portfolio</a> to see some examples of my work. Below are just a few examples of
+            web technologies I have experience with.
+          </p>
         </div>
       </div>
     </div>
@@ -73,12 +64,26 @@
       <a href="http://codepen.io/matthewfortier/"><li class="tooltip" data-title="Codepen"><i class="fa fa-codepen" aria-hidden="true"></i></li></a>
     </div>
 
+    <div class="mobile-menu">
+      <ul>
+        <a href="./pages/resume.html"><li>Resume</li></a>
+        <a href="./pages/portfolio.html"><li>Portfolio</li></a>
+        <a href="./pages/about.html"><li>About Me</li></a>
+        <a href="./pages/contact.html"><li>Contact</li></a>
+      </ul>
+    </div>
+
     <script
     src="https://code.jquery.com/jquery-2.2.4.min.js"
     integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
     crossorigin="anonymous"></script>
     <script type="text/javascript">
-
+      $(".menu-button").click(function(){
+        $(".mobile-menu").css("display", "block");
+      });
+      $(".mobile-menu ul").click(function(){
+        $(".mobile-menu").css("display", "none");
+      });
     </script>
   </body>
 </html>

@@ -84,6 +84,12 @@ nav {
     transform: scale(0.95);
     transition: all .5s ease-out; }
 
+.menu-button {
+  display: none; }
+
+.mobile-menu {
+  display: none; }
+
 #floating-sidebar {
   position: fixed;
   height: auto;
@@ -140,7 +146,7 @@ nav {
 
 .page-text {
   position: fixed;
-  z-index: -1;
+  z-index: 1;
   right: 0;
   top: 10%;
   font-family: "Montserrat", sans-serif;
@@ -149,28 +155,25 @@ nav {
   color: rgba(0, 0, 0, 0.2); }
 
 .main-content {
-  position: fixed;
+  position: absolute;
   top: 20%;
-  left: 25%;
-  right: 25%;
   z-index: 2;
+  width: 100%; }
+
+.profile {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 60vw;
   background-color: white;
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); }
-  .main-content img {
-    height: 520px;
-    width: auto; }
-  .main-content #welcome {
-    margin: 0 3% -5% 3%; }
-  .main-content #technologies {
-    text-align: center;
-    padding-bottom: 20px; }
-    .main-content #technologies img {
-      padding-right: 5px;
-      width: auto;
-      height: 60px; }
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  margin: 0 auto; }
+  .profile img {
+    height: 20%;
+    width: 30%; }
+  .profile #welcome {
+    padding-left: 25px;
+    padding-right: 25px; }
 
 footer {
   position: fixed;
@@ -180,21 +183,97 @@ footer {
 
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-  /* STYLES GO HERE */
-  #navbar li {
-    margin-left: 1px;
-    border: 1px solid rgba(255, 255, 255, 0.2); }
+  #navbar {
+    display: none; }
+  #navbar-container {
+    margin-left: 10%;
+    margin-right: 10%;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center; }
+  .menu-button {
+    display: block;
+    position: relative;
+    z-index: 20;
+    width: 35px;
+    height: 5px;
+    background-color: white; }
+    .menu-button:before {
+      content: '';
+      display: block;
+      position: relative;
+      width: 35px;
+      height: 5px;
+      background-color: white;
+      margin-top: 10px; }
+    .menu-button:after {
+      content: '';
+      display: block;
+      position: relative;
+      width: 35px;
+      height: 5px;
+      background-color: white;
+      margin-top: -25px; }
+  .mobile-menu {
+    display: none;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9); }
+    .mobile-menu ul {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      list-style-type: none; }
+    .mobile-menu li {
+      color: white;
+      font-size: 35px; }
   .page-text {
     position: static;
-    font-size: 25px;
-    text-align: right; }
+    float: right;
+    font-size: 20px; }
   #floating-sidebar {
     position: static;
     float: right; }
   .main-content {
     position: static;
-    box-shadow: none; }
+    box-shadow: none;
+    margin-top: 15%; }
+    .main-content .profile {
+      width: 100vw; }
     .main-content img:first-child {
       display: none; }
   footer {
     position: static; } }
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .page-text {
+    position: static;
+    float: right;
+    font-size: 55px; }
+  .main-content {
+    position: static;
+    box-shadow: none;
+    margin-top: 7%;
+    font-size: .8em; }
+    .main-content .profile {
+      width: 70vw; } }
