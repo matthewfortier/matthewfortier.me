@@ -40,11 +40,32 @@
 
     <div class="main-content">
       <div class="portfolio-content">
-        <div class="card">
-          <h1>Card 1</h1>
+        <div class="card" data-index='1'>
+          <div class="card-image" data-image="../images/bg6.jpg"></div>
+          <div class="card-info">
+            <div class="card-details">
+              <h1 class="card-title">Seating Chart</h1>
+              <div class="card-technologies">
+                <img src="../images/html.png" alt="">
+                <img src="../images/css.png" alt="" style="transform: scale(1.25);">
+                <img src="../images/js.png" alt="">
+                <img src="../images/jquery.png" alt="">
+                <img src="../images/php.png" alt="">
+                <img src="../images/mysql.png" alt="">
+                <img src="../images/apache.png" alt="">
+              </div>
+            </div>
+            <p class="card-description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tempor hendrerit urna non laoreet. Morbi consequat, leo vel condimentum vehicula, urna mauris mattis nulla, et cursus risus ligula sed metus. Vivamus malesuada eu ipsum at euismod. Nunc elit nisl, bibendum a
+            </p>
+          </div>
         </div>
         <div class="card">
-          <h1>Card 2</h1>
+          <div class="card-image" data-image="../images/sass.svg"></div>
+          <div class="card-info">
+            <h1>Inventory</h1>
+            <p>This is a project</p>
+          </div>
         </div>
         <div class="card">
           <h1>Card 3</h1>
@@ -59,12 +80,12 @@
       &copy; Copyright Matthew Fortier 2017
     </footer>
 
-    <div id="floating-sidebar">
+    <div class="floating-sidebar">
       <!-- http://codepen.io/runnabro/pen/imeHn/ -->
-      <a href="#"><li class="tooltip" data-title="Mail"><i class="fa fa-envelope-o" aria-hidden="true"></i></li></a>
-      <a href="#"><li class="tooltip" data-title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></li></a>
-      <a href="#"><li class="tooltip" data-title="LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></li></a>
-      <a href="#"><li class="tooltip" data-title="Codepen"><i class="fa fa-codepen" aria-hidden="true"></i></li></a>
+      <a href="mailto:matther2012@gmail.com"><li class="tooltip" data-title="Mail"><i class="fa fa-envelope-o" aria-hidden="true"></i></li></a>
+      <a href="https://github.com/matthewfortier"><li class="tooltip" data-title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></li></a>
+      <a href="https://www.linkedin.com/in/matthewfortier"><li class="tooltip" data-title="LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></li></a>
+      <a href="http://codepen.io/matthewfortier/"><li class="tooltip" data-title="Codepen"><i class="fa fa-codepen" aria-hidden="true"></i></li></a>
     </div>
 
     <div class="mobile-menu">
@@ -85,9 +106,15 @@
       $( document ).ready(function() {
         console.log( "ready!" );
 
+        // Set Portfolio Images
+
+        $(".card-image").each(function(){
+          console.log($(this).data("image"));
+          url = 'url(' + $(this).data("image") + ')';
+          $(this).css("background-image", url);
+        });
+
         $('.portfolio-content').slick({
-          centerMode: true,
-          centerPadding: '60px',
           slidesToShow: 2,
           slidesToScroll: 1,
           autoplay: true,
@@ -95,22 +122,28 @@
           prevArrow: false,
           nextArrow: false,
           adaptiveHeight: true,
-          pauseOnFocus: true
+          pauseOnFocus: true,
+          responsive: [
+            {
+              breakpoint: 480,
+              settings: "unslick"
+            }
+          ]
         });
 
         $("#sc").click(function() {
-          $('.portfolio-content').slick('slickGoTo', 1);
+          $('.portfolio-content').slick('slickGoTo', 0);
         });
 
         $("#i").click(function() {
-          $('.portfolio-content').slick('slickGoTo', 2);
+          $('.portfolio-content').slick('slickGoTo', 1);
         });
 
         $("#iOS").click(function() {
-          $('.portfolio-content').slick('slickGoTo', 3);
+          $('.portfolio-content').slick('slickGoTo', 2);
         });
         $("#sa").click(function() {
-          $('.portfolio-content').slick('slickGoTo', 4);
+          $('.portfolio-content').slick('slickGoTo', 3);
         });
 
         $(".menu-button").click(function(){

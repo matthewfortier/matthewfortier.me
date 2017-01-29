@@ -84,7 +84,7 @@ nav
 
   // Floating Sidebar Styles
 
-#floating-sidebar
+.floating-sidebar
   position: fixed
   height: auto
   width: 38px
@@ -98,6 +98,7 @@ nav
   border-bottom-left-radius: 5px
   background-color: $main
   padding-bottom: 8px
+  z-index: 10000
 
   li
     margin: 0
@@ -268,7 +269,7 @@ footer
     float: right
     font-size: 20px
 
-  #floating-sidebar
+  .floating-sidebar
     position: static
     display: flex
     flex-direction: row
@@ -286,6 +287,9 @@ footer
     img:first-child
       display: none
 
+    .card
+      width: 100vw
+
   footer
     position: static
     margin-top: 35px
@@ -300,8 +304,6 @@ footer
     position: static
     float: right
     font-size: 55px
-
-  #floating-sidebar
 
   .main-content
     position: static

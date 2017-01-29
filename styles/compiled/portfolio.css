@@ -90,7 +90,7 @@ nav {
 .mobile-menu {
   display: none; }
 
-#floating-sidebar {
+.floating-sidebar {
   position: fixed;
   height: auto;
   width: 38px;
@@ -111,7 +111,7 @@ nav {
   background-color: #131519;
   padding-bottom: 8px;
   z-index: 10000; }
-  #floating-sidebar li {
+  .floating-sidebar li {
     margin: 0;
     padding: 0;
     list-style-type: none;
@@ -188,6 +188,7 @@ nav {
   margin-right: 65px;
   margin-left: 65px;
   margin-bottom: 40px;
+  padding-bottom: 40px;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
   border-radius: 2px; }
   .card img {
@@ -200,6 +201,44 @@ nav {
     position: fixed;
     top: 20%;
     left: 50%; }
+  .card .card-image {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 2px; }
+  .card .card-info {
+    padding-left: 15px;
+    padding-right: 15px; }
+  .card .card-description {
+    margin-top: -30px;
+    padding-top: 25px; }
+  .card .card-details {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: baseline;
+    -ms-flex-align: baseline;
+    align-items: baseline;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+  .card .card-technologies {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    .card .card-technologies img {
+      height: 30px;
+      width: auto;
+      margin-right: 10px; }
 
 footer {
   position: fixed;
@@ -299,7 +338,9 @@ footer {
     position: static;
     float: right;
     font-size: 20px; }
-  #floating-sidebar {
+    .page-text .portfolio-links {
+      display: none; }
+  .floating-sidebar {
     position: static;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -317,6 +358,10 @@ footer {
       width: 100vw; }
     .main-content img:first-child {
       display: none; }
+    .main-content .card {
+      width: 100vw;
+      margin-left: 0;
+      margin-right: 0; }
   footer {
     position: static;
     margin-top: 35px;

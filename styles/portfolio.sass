@@ -85,7 +85,7 @@ nav
 
   // Floating Sidebar Styles
 
-#floating-sidebar
+.floating-sidebar
   position: fixed
   height: auto
   width: 38px
@@ -180,6 +180,7 @@ nav
   margin-right: 65px
   margin-left: 65px
   margin-bottom: 40px
+  padding-bottom: 40px
   box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)
   border-radius: 2px
 
@@ -195,6 +196,38 @@ nav
     position: fixed
     top: 20%
     left: 50%
+
+  .card-image
+    position: relative
+    width: 100%
+    height: 300px
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+    border-radius: 2px
+
+  .card-info
+    padding-left: 15px
+    padding-right: 15px
+
+  .card-description
+    margin-top: -30px
+    padding-top: 25px
+
+  .card-details
+    display: flex
+    align-items: baseline
+    justify-content: space-between
+
+  .card-technologies
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    img
+      height: 30px
+      width: auto
+      margin-right: 10px
 
 // Footer
 footer
@@ -294,7 +327,10 @@ footer
     float: right
     font-size: 20px
 
-  #floating-sidebar
+    .portfolio-links
+      display: none
+
+  .floating-sidebar
     position: static
     display: flex
     flex-direction: row
@@ -312,6 +348,11 @@ footer
     img:first-child
       display: none
 
+    .card
+      width: 100vw
+      margin-left: 0
+      margin-right: 0
+
   footer
     position: static
     margin-top: 35px
@@ -326,8 +367,6 @@ footer
     position: static
     float: right
     font-size: 55px
-
-  #floating-sidebar
 
   .main-content
     position: static
