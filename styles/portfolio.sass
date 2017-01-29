@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css?family=Lato|Montserrat|Roboto|Open+Sans:300')
 
 $main: #131519
@@ -98,6 +99,7 @@ nav
   border-bottom-left-radius: 5px
   background-color: $main
   padding-bottom: 8px
+  z-index: 10000
 
   li
     margin: 0
@@ -147,6 +149,23 @@ nav
   font-size: 105px
   font-weight: 900
   color: rgba(0, 0, 0, .2)
+  text-align: right
+
+  .portfolio-links
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-top: -71px
+
+    li
+      list-style-type: none
+      color: #131519
+      font-size: 16px
+      cursor: pointer
+      margin-right: 25px
+
+      &:hover
+        border-bottom: 2px soild #131519
 
 .main-content
   position: absolute
@@ -154,13 +173,15 @@ nav
   z-index: 2
   width: 100%
 
-
 .card
-  display: flex
-  width: 60vw
   background-color: white
+  height: 500px
+  width: 600px
+  margin-right: 65px
+  margin-left: 65px
+  margin-bottom: 40px
   box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)
-  margin: 0 auto
+  border-radius: 2px
 
   img
     height: 20%
@@ -169,6 +190,11 @@ nav
   #welcome
     padding-left: 25px
     padding-right: 25px
+
+  .expand
+    position: fixed
+    top: 20%
+    left: 50%
 
 // Footer
 footer

@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matthew Fortier | Portfolio</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../styles/compiled/styles.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+    <link rel="stylesheet" href="../styles/compiled/portfolio.css">
   </head>
   <body>
     <nav>
@@ -29,24 +30,28 @@
 
     <div class="page-text">
       PORTFOLIO
+      <div class="portfolio-links">
+          <li id="sc">Seating Chart</li>
+          <li id="i">Inventory</li>
+          <li id="iOS">iOS Number Pad</li>
+          <li id="sa">Student Ambassador Homepage</li>
+      </div>
     </div>
 
     <div class="main-content">
-      <img src="../images/me.jpg" alt="A Portrait of Me">
-      <div id="welcome">
-        <h1>Welcome!</h1>
-        <p>My name is Matthew Fortier and I am an aspiring Full Stack Web Developer.
-          I really enjoy having a part in every aspect of web development from
-          writing the stylesheets, making database calls, and even setting up web servers
-          from the command line. My favorite aspect of web development is making a well-designed
-          website. It is becoming more and more important these days to have a nice looking website,
-          and that is where I would like to come in.
-          <br> <br>
-          I have had the opportunity to explore many different web development languages and frameworks
-          to create the best product possible while making it look and feel great to use. Check out my
-          <a href="#" style="font-weight: 900;">portfolio</a> to see some examples of my work. Below are just a few examples of
-          web technologies I have experience with.
-        </p>
+      <div class="portfolio-content">
+        <div class="card">
+          <h1>Card 1</h1>
+        </div>
+        <div class="card">
+          <h1>Card 2</h1>
+        </div>
+        <div class="card">
+          <h1>Card 3</h1>
+        </div>
+        <div class="card">
+          <h1>Card 4</h1>
+        </div>
       </div>
     </div>
 
@@ -75,12 +80,50 @@
     src="https://code.jquery.com/jquery-2.2.4.min.js"
     integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
     crossorigin="anonymous"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
     <script type="text/javascript">
-      $(".menu-button").click(function(){
-        $(".mobile-menu").css("display", "block");
-      });
-      $(".mobile-menu ul").click(function(){
-        $(".mobile-menu").css("display", "none");
+      $( document ).ready(function() {
+        console.log( "ready!" );
+
+        $('.portfolio-content').slick({
+          centerMode: true,
+          centerPadding: '60px',
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 3000,
+          prevArrow: false,
+          nextArrow: false,
+          adaptiveHeight: true,
+          pauseOnFocus: true
+        });
+
+        $("#sc").click(function() {
+          $('.portfolio-content').slick('slickGoTo', 1);
+        });
+
+        $("#i").click(function() {
+          $('.portfolio-content').slick('slickGoTo', 2);
+        });
+
+        $("#iOS").click(function() {
+          $('.portfolio-content').slick('slickGoTo', 3);
+        });
+        $("#sa").click(function() {
+          $('.portfolio-content').slick('slickGoTo', 4);
+        });
+
+        $(".menu-button").click(function(){
+          $(".mobile-menu").css("display", "block");
+        });
+        $(".mobile-menu ul").click(function(){
+          $(".mobile-menu").css("display", "none");
+        });
+
+        $(".card").click(function(){
+          $(this).addClass("expand");
+        });
+
       });
     </script>
   </body>
