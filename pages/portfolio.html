@@ -40,7 +40,7 @@
 
     <div class="main-content">
       <div class="portfolio-content">
-        <div class="card" data-index='1'>
+        <div class="card" name="seat">
           <div class="card-image" data-image="../images/bg6.jpg"></div>
           <div class="card-info">
             <div class="card-details">
@@ -61,7 +61,7 @@
           </div>
         </div>
         <div class="card">
-          <div class="card-image" data-image="../images/sass.svg"></div>
+          <div class="card-image" data-image="../images/me2.jpg"></div>
           <div class="card-info">
             <h1>Inventory</h1>
             <p>This is a project</p>
@@ -73,6 +73,33 @@
         <div class="card">
           <h1>Card 4</h1>
         </div>
+      </div>
+    </div>
+
+    <div class="mobile-portfolio">
+      <div class="portfolio-piece">
+        <h1>Seating Chart</h1>
+        <div class="piece-content">
+          <div class="piece-image" data-image="../images/bg6.jpg"></div>
+          <div class="piece-details">
+
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-piece">
+        <h1>Inventory</h1>
+        <div class="piece-content">
+          <div class="piece-image"></div>
+          <div class="piece-details">
+
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-piece">
+        <h1>iOS Number Pad</h1>
+      </div>
+      <div class="portfolio-piece">
+        <h1>Student Ambassador Homepage</h1>
       </div>
     </div>
 
@@ -89,12 +116,18 @@
     </div>
 
     <div class="mobile-menu">
+      <span class="close-button"></span>
       <ul>
         <a href="../pages/resume.html"><li>Resume</li></a>
         <a href="../pages/portfolio.html"><li>Portfolio</li></a>
         <a href="../pages/about.html"><li>About Me</li></a>
         <a href="../pages/contact.html"><li>Contact</li></a>
       </ul>
+    </div>
+
+    <div class="modal">
+      <h1>This is a modal</h1>
+      <span class="modal-close"></span>
     </div>
 
     <script
@@ -114,11 +147,17 @@
           $(this).css("background-image", url);
         });
 
+        $(".piece-image").each(function(){
+          console.log($(this).data("image"));
+          url = 'url(' + $(this).data("image") + ')';
+          $(this).css("background-image", url);
+        });
+
         $('.portfolio-content').slick({
           slidesToShow: 2,
           slidesToScroll: 1,
           autoplay: true,
-          autoplaySpeed: 3000,
+          autoplaySpeed: 4000,
           prevArrow: false,
           nextArrow: false,
           adaptiveHeight: true,
@@ -129,6 +168,14 @@
               settings: "unslick"
             }
           ]
+        });
+
+        $(".card").click(function(){
+          $(".modal").show("fast");
+        });
+
+        $(".modal-close").click(function(){
+          $(".modal").hide("fast");
         });
 
         $("#sc").click(function() {
@@ -148,13 +195,28 @@
 
         $(".menu-button").click(function(){
           $(".mobile-menu").css("display", "block");
+          $(".menu-button").hide()
         });
-        $(".mobile-menu ul").click(function(){
+        $(".close-button").click(function(){
           $(".mobile-menu").css("display", "none");
+          $(".menu-button").show()
         });
 
         $(".card").click(function(){
           $(this).addClass("expand");
+        });
+
+        closeAll = function () {
+          $(".piece-content").removeClass("active").addClass("passive");
+        }
+
+        $(".portfolio-piece").click(function(){
+          if ($(this).find(".piece-content").hasClass("active")){
+            closeAll();
+          } else {
+            closeAll();
+            $(this).find(".piece-content").removeClass("passive").addClass("active");
+          }
         });
 
       });
