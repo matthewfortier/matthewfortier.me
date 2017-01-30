@@ -292,7 +292,7 @@ footer {
 
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-  body {
+  body, html {
     overflow-x: hidden; }
   #navbar {
     display: none; }
