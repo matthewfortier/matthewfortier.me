@@ -292,6 +292,8 @@ footer {
 
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  body {
+    overflow-x: hidden; }
   #navbar {
     display: none; }
   #navbar-container {
@@ -417,15 +419,15 @@ footer {
       font-size: .5em;
       box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); }
       .mobile-portfolio .portfolio-piece .piece-content {
-        max-height: 0;
+        height: 0;
         overflow: hidden; }
         .mobile-portfolio .portfolio-piece .piece-content.active {
-          max-height: 1000px;
-          transition: all .5s ease-in-out; }
+          height: 300px;
+          transition: all .3s ease-in-out; }
         .mobile-portfolio .portfolio-piece .piece-content.passive {
-          max-height: 0;
+          height: 0;
           overflow: hidden;
-          transition: all .5s ease-in-out; }
+          transition: all .3s ease-in-out; }
         .mobile-portfolio .portfolio-piece .piece-content .piece-image {
           position: relative;
           width: 100%;
