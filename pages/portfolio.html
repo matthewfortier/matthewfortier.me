@@ -142,13 +142,11 @@
         // Set Portfolio Images
 
         $(".card-image").each(function(){
-          console.log($(this).data("image"));
           url = 'url(' + $(this).data("image") + ')';
           $(this).css("background-image", url);
         });
 
         $(".piece-image").each(function(){
-          console.log($(this).data("image"));
           url = 'url(' + $(this).data("image") + ')';
           $(this).css("background-image", url);
         });
@@ -211,11 +209,11 @@
         }
 
         $(".portfolio-piece").click(function(){
-          if ($(this).find(".piece-content").hasClass("active")){
-            closeAll();
-          } else {
+          if (!$(this).find(".piece-content").hasClass("active")){
             closeAll();
             $(this).find(".piece-content").removeClass("passive").addClass("active");
+          } else {
+            closeAll();
           }
         });
 
